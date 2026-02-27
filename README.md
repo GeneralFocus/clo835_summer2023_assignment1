@@ -1,3 +1,4 @@
+Assignment 2 First Commit
 # Install the required MySQL package
 
 sudo apt-get update -y
