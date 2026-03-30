@@ -1,35 +1,36 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title>Employee Information</title>
+  <title>Employee Information</title>
+  <style>
+    body {
+      background-image: url("/static/bg.jpg");
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+      background-attachment: fixed;
+    }
+  </style>
 </head>
 <center>
-	<font color="black" size="5" style="font-family: avenir">
+  <font color="black" size="5" style="font-family: avenir">
 
-		<h1 style="color: DodgerBlue">Employee Information</h1>
+    <h1 style="color: DodgerBlue">Employee Information</h1>
+    <h2 style="color: DodgerBlue">{{ student_name }}</h2>
 
-		<body style="background: {{ color }};">
+    <body>
+      <form>
+        <div>
+          Employee ID:<br> {{ id }} <br><br>
+          First Name:<br> {{ fname }} <br><br>
+          Last Name:<br> {{ lname }} <br><br>
+          Primary Interest:<br> {{ interest }} <br><br>
+          Location:<br> {{ location }} <br><br>
+        </div>
+      </form>
+      <a href="{{ url_for('home') }}">Back</a>
+    </body>
 
-			<form>
-
-				<div>
-
-			  		Employee ID:<br> {{ id }} <br><br>
-
-			  		First Name:<br> {{ fname }} <br><br>
-
-			  		Last Name:<br> {{ lname }} <br><br>
-
-			  		Primary Interest:<br> {{ interest }} <br><br>
-
-			  		Location:<br> {{ location }} <br><br>
-			  		
-			  	</div>
-
-			</form>
-			<a href="{{ url_for('home') }}">Back</a>
-		</body>
-
-	</font>
+  </font>
 </center>
 </html>

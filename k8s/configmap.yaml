@@ -1,0 +1,16 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: app-configmap
+  namespace: final
+data:
+
+  STUDENT_NAME: "Ankush; Eldar; Oyinkansola"
+
+  BG_IMAGE_URL: "s3://clo835-group6-096395041427/background.jpg"
+
+  DATABASE: "employees"
+
+  DBHOST: "mysql-service.final.svc.cluster.local"
+
+  DBPORT: "3306"

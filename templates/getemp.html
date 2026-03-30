@@ -1,27 +1,34 @@
-	<!DOCTYPE html>
+<!DOCTYPE html>
 <html>
 <head>
-	<title>Get Employee Information</title>
+  <title>Get Employee Information</title>
+  <style>
+    body {
+      background-image: url("/static/bg.jpg");
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+      background-attachment: fixed;
+    }
+  </style>
 </head>
 <center>
-	<font color="black" size="5" style="font-family: avenir">
+  <font color="black" size="5" style="font-family: avenir">
 
-		<h1 style="color: DodgerBlue">Employee Information</h1>
+    <h1 style="color: DodgerBlue">Employee Information</h1>
+    <h2 style="color: DodgerBlue">{{ student_name }}</h2>
 
-		<body style="background: {{ color }};">
+    <body>
+      <form action="/fetchdata" autocomplete="on" method="POST">
 
-			<form action="/fetchdata" autocomplete="on" method="POST">
+        <h2 style="color: grey">Enter Employee ID</h2>
 
-				<h2 style="color: grey">Enter Employee ID</h2>
+        Employee ID:<br> <input style="height:25px;font-size:14pt;" type="number" name="emp_id" autofocus size="40"><br><br>
 
-		  		Employee ID:<br> <input style="height:25px;font-size:14pt;" type="number" name="emp_id" autofocus size="40"><br><br>
+        <button type="submit" style="background: grey; height: 45px; width: 200px; color: white; size: 5; font:oblique;">FETCH INFO</button><br><br>
 
-
-		  		<button type="submit" style="background: grey; height: 45px; width: 200px; color: white; size: 5; font:oblique;">FETCH INFO</button><br><br>
-
-			</form>
-
-		</body>
-	</font>
+      </form>
+    </body>
+  </font>
 </center>
 </html>
