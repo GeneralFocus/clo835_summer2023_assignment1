@@ -1,0 +1,35 @@
+apiVersion: apps/v1
+kind: ReplicaSet
+metadata:
+  name: app-replicaset
+  namespace: web
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: employees
+  template:
+    metadata:
+      labels:
+        app: employees
+    spec:
+      imagePullSecrets:
+      - name: ecr-secret
+      containers:
+      - name: app
+        image: 096395041427.dkr.ecr.us-east-1.amazonaws.com/clo835-app:latest
+        ports:
+        - containerPort: 8080
+        env:
+        - name: APP_COLOR
+          value: "blue"
+        - name: DBHOST
+          value: "mysql-service.mysql.svc.cluster.local"
+        - name: DBPORT
+          value: "3306"
+        - name: DBUSER
+          value: "root"
+        - name: DBPWD
+          value: "pw"
+        - name: DATABASE
+          value: "employees"
